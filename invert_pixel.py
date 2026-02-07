@@ -18,6 +18,8 @@ for file in os.listdir(input_folder):
     if file.lower().endswith((".jpg",".png",".jpeg")):
         path = os.path.join(input_folder, file)
         img = cv2.imread(path)
+        if img is None:
+            continue
         img = cv2.resize(img, (800, 600))
 
 
