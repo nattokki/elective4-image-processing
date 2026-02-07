@@ -15,11 +15,11 @@ jobs:
         with:
           python-version: '3.10'
       - name: Installing required dependencies
-        run: 
+        run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Running image processing script
-        run:
+        run: |
           python invert_pixel.py
       - name: Save processed image
         uses: actions/upload-artifact@v4
