@@ -37,7 +37,7 @@ jobs:
 
           git add -f output_images/
 
-          git commit -m "CI: Auto-processed images" || echo "No changes to
+          git commit -m "CI: Done processing image" || echo "No changes to
           commit"
 
           git push         
