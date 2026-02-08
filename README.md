@@ -1,5 +1,4 @@
 # ELECTIVE4 IMAGE PROCESSING PROJECT
-
 ## Project Overview
 This project applies **image processing techniques** using Python and OpenCV.  
 It automatically processes images from the `input_images/` folder and saves the results to the `output_images/` folder.  
@@ -15,7 +14,6 @@ The processing pipeline applies **five sequential techniques** to each image:
 Continuous Integration (CI) using **GitHub Actions** ensures the code is tested and validated automatically on every push.
 
 ---
-
 ## Tools and Technologies
 - Python 3
 - OpenCV (opencv-python)
@@ -25,7 +23,6 @@ Continuous Integration (CI) using **GitHub Actions** ensures the code is tested 
 - PyTest
 
 ---
-
 ## System Features
 1. Automatically detects image files in `input_images/`  
 2. Applies the following image processing techniques sequentially:
@@ -38,7 +35,6 @@ Continuous Integration (CI) using **GitHub Actions** ensures the code is tested 
 4. CI pipeline runs automatically on every GitHub push  
 
 ---
-
 ## Project Structure
 ELECTIVE4-IMAGE-PROCESSING/
 │── .github/workflows/ # CI workflow configuration
@@ -50,7 +46,6 @@ ELECTIVE4-IMAGE-PROCESSING/
 │── requirements.txt # Python dependencies
 
 ---
-
 ## How to Run the Project
 
 1. Install dependencies:
@@ -79,7 +74,6 @@ pytest
 - If you don’t have tests, you can skip this section or just mention **“No automated tests implemented yet.”**
 
 ---
-
 ## Continuous Integration (CI) Section
 This project uses **GitHub Actions** to automatically:
 - Install dependencies  
