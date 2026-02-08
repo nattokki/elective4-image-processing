@@ -100,6 +100,7 @@ Developer → GitHub Push → GitHub Actions → Run Tests → Build Success →
   
 ---
 ## Example Output
+
 ```
 Original Image → Final Processed Image
 ```
