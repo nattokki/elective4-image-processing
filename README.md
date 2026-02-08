@@ -36,15 +36,16 @@ Continuous Integration (CI) using **GitHub Actions** ensures the code is tested 
 
 ---
 ## Project Structure
+```text
 ELECTIVE4-IMAGE-PROCESSING/
-│── .github/workflows/ # CI workflow configuration
-│── input_images/ # Original images to process
-│── output_images/ # Processed images
-│── .gitignore # Ignored files/folders in Git
-│── invert_pixel.py # Main Python processing script
-│── README.md # Project documentation
-│── requirements.txt # Python dependencies
-
+│── .github/workflows/ 
+│── input_images/ 
+│── output_images/ 
+│── .gitignore 
+│── invert_pixel.py 
+│── README.md 
+│── requirements.txt 
+```
 ---
 ## How to Run the Project
 
@@ -69,10 +70,6 @@ To run automated tests:
 ```bash
 pytest
 ```
-
-- This will create another gray code block for the test command.  
-- If you don’t have tests, you can skip this section or just mention **“No automated tests implemented yet.”**
-
 ---
 ## Continuous Integration (CI) Section
 This project uses **GitHub Actions** to automatically:
@@ -81,7 +78,6 @@ This project uses **GitHub Actions** to automatically:
 - Validate system build  
 
 The pipeline runs on every **push to GitHub**.  
-A green check ✔ indicates a successful build.
 
 ## Group Roles
 - Image Processing Lead – Implements image processing pipeline
