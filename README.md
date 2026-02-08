@@ -62,7 +62,7 @@ python invert_pixel.py
 ```
 
 3. Processed images will appear in the ***output_images/*** folder.
-
+---
 ## Running Tests
 
 To run automated tests:
@@ -78,13 +78,13 @@ This project uses **GitHub Actions** to automatically:
 - Validate system build  
 
 The pipeline runs on every **push to GitHub**.  
-
+---
 ## Group Roles
 - Image Processing Lead – Implements image processing pipeline
 - DevOps Engineer – Configures GitHub Actions
 - Tester – Writes automated tests
 - Documenter/Presenter – Prepares README and presentation
-
+---
 ## DevOps Workflow
 
 ```text
@@ -93,9 +93,10 @@ Developer → GitHub Push → GitHub Actions → Run Tests → Build Success →
 - Every commit triggers the CI pipeline
 - Ensures code reliability and automation
 - Tracks development progress through Git commit history
-
+---
 ## Example Output
 ```
 Original Image → Final Processed Image
 ```
 *The final image demonstrates all five processing techniques applied sequentially.*
+---
