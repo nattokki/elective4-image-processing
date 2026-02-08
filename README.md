@@ -1,2 +1,111 @@
-# elective4-image-processing
-Midterm Project for Elective 4
+# ELECTIVE4 IMAGE PROCESSING PROJECT
+
+## Project Overview
+This project applies **image processing techniques** using Python and OpenCV.  
+It automatically processes images from the `input_images/` folder and saves the results to the `output_images/` folder.  
+
+The processing pipeline applies **five sequential techniques** to each image:
+
+1. Grayscale Conversion  
+2. Gaussian Blur  
+3. Adaptive Threshold  
+4. Morphological Closing  
+5. Inversion & Pixelation  
+
+Continuous Integration (CI) using **GitHub Actions** ensures the code is tested and validated automatically on every push.
+
+---
+
+## Tools and Technologies
+- Python 3
+- OpenCV (opencv-python)
+- NumPy
+- GitHub
+- GitHub Actions (CI)
+- PyTest
+
+---
+
+## System Features
+1. Automatically detects image files in `input_images/`  
+2. Applies the following image processing techniques sequentially:
+   - **Grayscale Conversion** – converts colored images to black and white  
+   - **Gaussian Blur** – smooths the image to reduce noise  
+   - **Adaptive Threshold** – converts image to binary based on local pixel intensity  
+   - **Morphological Closing** – removes small holes and cleans object edges  
+   - **Inversion & Pixelation** – inverts colors and pixelates the image for final output  
+3. Saves processed images to `output_images/`  
+4. CI pipeline runs automatically on every GitHub push  
+
+---
+
+## Project Structure
+ELECTIVE4-IMAGE-PROCESSING/
+│── .github/workflows/ # CI workflow configuration
+│── input_images/ # Original images to process
+│── output_images/ # Processed images
+│── .gitignore # Ignored files/folders in Git
+│── invert_pixel.py # Main Python processing script
+│── README.md # Project documentation
+│── requirements.txt # Python dependencies
+
+---
+
+## How to Run the Project
+
+1. Install dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
+2. Run the program:
+
+```bash
+python invert_pixel.py
+```
+
+3. Processed images will appear in the ***output_images/*** folder.
+
+## Running Tests
+
+To run automated tests:
+
+```bash
+pytest
+```
+
+- This will create another gray code block for the test command.  
+- If you don’t have tests, you can skip this section or just mention **“No automated tests implemented yet.”**
+
+---
+
+## Continuous Integration (CI) Section
+This project uses **GitHub Actions** to automatically:
+- Install dependencies  
+- Run automated tests (if any)  
+- Validate system build  
+
+The pipeline runs on every **push to GitHub**.  
+A green check ✔ indicates a successful build.
+
+## Group Roles
+- Image Processing Lead – Implements image processing pipeline
+- DevOps Engineer – Configures GitHub Actions
+- Tester – Writes automated tests
+- Documenter/Presenter – Prepares README and presentation
+
+## DevOps Workflow
+
+```text
+Developer → GitHub Push → GitHub Actions → Run Tests → Build Success → Output Images
+```
+- Every commit triggers the CI pipeline
+- Ensures code reliability and automation
+- Tracks development progress through Git commit history
+
+## Example Output
+```
+Original Image → Final Processed Image
+```
+*The final image demonstrates all five processing techniques applied sequentially.*
