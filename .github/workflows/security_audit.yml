@@ -1,0 +1,32 @@
+name: DevSecOps Security Audit
+
+on:
+  push:
+    branches: [ "main", "security-integration" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  security-scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Clone Repository"
+        uses: actions/checkout@v4
+
+      - name: "Initialize Python"
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: "Install Security Tools"
+        run: pip install bandit
+
+      - name: "Run Bandit Security Scan"
+        
+        run: bandit -r . -f txt -o security_report.txt || true
+
+      - name: "Upload Security Report"
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-audit-report
+          path: security_report.txt
