@@ -11,7 +11,7 @@ The processing pipeline applies **five sequential techniques** to each image:
 4. Morphological Closing  
 5. Inversion & Pixelation  
 
-Continuous Integration (CI) using **GitHub Actions** ensures the code is tested and validated automatically on every push.
+Continuous Integration (CI) using **GitHub Actions** ensures the code is tested, security-scanned, and validated automatically on every push.
 
 ---
 ## Tools and Technologies
@@ -20,6 +20,7 @@ Continuous Integration (CI) using **GitHub Actions** ensures the code is tested 
 - NumPy
 - GitHub
 - GitHub Actions (CI)
+- Bandit (SAST)
 - PyTest
 
 ---
@@ -76,10 +77,36 @@ pytest
 ## Continuous Integration (CI) Section
 This project uses **GitHub Actions** to automatically:
 - Install dependencies  
-- Run automated tests (if any)  
+- Run automated tests
+- Execute security scans (Bandit SAST)  
 - Validate system build  
 
 The pipeline runs on every **push to GitHub**.  
+
+---
+## DevSecOps Security Integration
+
+This project applies **DevSecOps principles** by integrating automated security testing into the CI pipeline using **Bandit**, a Static Application Security Testing (SAST) tool for Python.
+
+### Automated Security Audit (SAST)
+- **Bandit** is executed automatically through **GitHub Actions**
+- Runs on every **push** to the GitHub repository
+- Scans the Python codebase for common security vulnerabilities such as:
+  - Insecure function usage
+  - Hardcoded secrets
+  - Unsafe imports and configurations
+- Generates a **security audit report** available in the GitHub Actions logs
+
+### GitHub Actions Security Workflow
+- The security scan appears in the **Actions** tab as:
+  **DevSecOps Security Audit**
+- All security checks currently **pass successfully**, indicating no detected vulnerabilities
+
+### DevSecOps Benefits
+- Integrates security early in the development lifecycle
+- Automatically detects vulnerabilities without manual review
+- Enhances code reliability and project security
+- Demonstrates real-world **DevSecOps best practices**
 
 ---
 ## Group Roles
@@ -87,12 +114,13 @@ The pipeline runs on every **push to GitHub**.
 - DevOps Engineer – Configures GitHub Actions
 - Tester – Writes automated tests
 - Documenter/Presenter – Prepares README and presentation
+- DevSecOps Engineer – Ensures automated security processes
   
 ---
 ## DevOps Workflow
 
 ```text
-Developer → GitHub Push → GitHub Actions → Run Tests → Build Success → Output Images
+Developer → GitHub Push → GitHub Actions → Security Scan (Bandit SAST) → Run Tests → Build Success → Output Images
 ```
 - Every commit triggers the CI pipeline
 - Ensures code reliability and automation
