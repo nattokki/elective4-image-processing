@@ -23,18 +23,30 @@ jobs:
           pip install bandit flake8 safety
 
       - name: "1. Security Scan (SAST)"
-        
-        run: bandit -r . -v || true
+        run: |
+          bandit -r . -v > bandit-report.txt || true
+          cat bandit-report.txt
 
       - name: "2. Code Quality Check"
-        
-        run: flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || true
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics > flake8-report.txt || true
+          cat flake8-report.txt
 
       - name: "3. Dependency Scanning"
-       
         run: |
           if [ -f requirements.txt ]; then
-            safety check -r requirements.txt || true
+            safety check -r requirements.txt > safety-report.txt || true
           else
-            echo "No requirements.txt found, skipping dependency scan."
+            echo "No requirements.txt found, skipping dependency scan." > safety-report.txt
           fi
+          cat safety-report.txt
+
+      - name: "4. Upload Security Reports"
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-audit-reports
+          path: |
+            bandit-report.txt
+            flake8-report.txt
+            safety-report.txt
